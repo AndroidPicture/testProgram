@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SearchPic</string>
+    <string name="hello_world">准备开始</string>
+    <string name="action_settings">Settings</string>
+    <string name="choose">本地搜图</string>
+    <string name="setting">设置</string>
+    <string name="photo">拍照</string>
+    <string name="adv">精品推荐</string>
+
+</resources>
