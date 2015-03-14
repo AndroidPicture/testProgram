@@ -2,7 +2,9 @@ package wh.self.searchpic;
 
 import java.util.Set;
 
+import team.ui.captureImage.CaptureImgActivity;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Photo;
 import android.view.Menu;
@@ -41,6 +43,10 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			todo(R.string.photo);
+			Intent intent = new Intent();
+			intent = intent.setClass(MainActivity.this, CaptureImgActivity.class);
+			intent.putExtra("test_intent_capture", "capture_begin");
+			MainActivity.this.startActivity(intent);
 		}
 	}
 	

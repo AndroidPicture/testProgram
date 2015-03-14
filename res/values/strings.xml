@@ -8,5 +8,7 @@
     <string name="setting">设置</string>
     <string name="photo">拍照</string>
     <string name="adv">精品推荐</string>
+    <string name="capture_img">请拍照</string>
+    <string name="photo_name">相片名称</string>
 
 </resources>
