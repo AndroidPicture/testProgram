@@ -7,6 +7,7 @@ import java.io.IOException;
 import wh.self.searchpic.R;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
@@ -178,6 +179,9 @@ public class CaptureImgActivity extends Activity{
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera)
 		{
+			// 设置拍照后照片的保存路径
+			final String path = Environment.getExternalStorageDirectory().toString() 
+					+ "/Pictures/SearchPic";
 			// 根据拍照所得的数据创建位图
 			final Bitmap bm = BitmapFactory.decodeByteArray(data, 0,
 				data.length);
@@ -199,9 +203,9 @@ public class CaptureImgActivity extends Activity{
 					public void onClick(DialogInterface dialog, int which)
 					{
 						// 创建一个位于SD卡上的文件
-						File file = new File(Environment
-							.getExternalStorageDirectory(), photoName
-							.getText().toString() + ".jpg");
+//						File file = new File(Environment.getExternalStorageDirectory(), 
+//							photoName.getText().toString() + ".jpg");
+						File file = new File( path, photoName.getText().toString() + ".jpg");
 						FileOutputStream outStream = null;
 						try
 						{
