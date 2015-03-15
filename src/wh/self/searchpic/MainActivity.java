@@ -3,6 +3,7 @@ package wh.self.searchpic;
 import java.util.Set;
 
 import team.ui.captureImage.CaptureImgActivity;
+import team.ui.captureImage.SettingActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,6 +36,10 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			todo(R.string.setting);
+			Intent intent = new Intent();
+			intent = intent.setClass(MainActivity.this, SettingActivity.class);
+			intent.putExtra("test_intent_setting", "setting_begin");
+			MainActivity.this.startActivity(intent);
 		}
 	}
 	
@@ -62,6 +67,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		// Debug
+		Intent intent = getIntent();
+		String value = intent.getStringExtra("start_logo");
+		System.out.println(value);
+		
 		test_show = (TextView)findViewById(R.id.test_show);
 		choose = (Button)findViewById(R.id.choose);
 		set = (Button)findViewById(R.id.set);
